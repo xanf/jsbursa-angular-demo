@@ -1,0 +1,12 @@
+<div class="item">
+    <div class="close"><a ng-click="remove()" class="btn btn-danger" href="#" role="button"><span class="glyphicon glyphicon-remove"></span></a>
+
+    </div>
+    <h3>{{task.title}}</h3>
+
+    <p>{{task.description}}</p>
+
+    <p ng-if="actionText"> <a ng-click="process()" class="btn {{actionClass}}" ng-class="{'btn-primary': !actionClass}" href="#" role="button">{{actionText}}</a>
+
+    </p>
+</div>

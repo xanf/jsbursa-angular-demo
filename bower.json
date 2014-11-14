@@ -1,0 +1,24 @@
+{
+  "name": "jsbursa-demo-angular",
+  "version": "0.0.1",
+  "authors": [
+    "Illya Klymov <xanf@xanf.me>"
+  ],
+  "description": "Demo app using angular.js for JSBursa",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.2",
+    "lodash": "~2.4.1"
+  }
+}
