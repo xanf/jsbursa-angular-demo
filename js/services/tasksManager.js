@@ -1,11 +1,10 @@
-angular.module('midnightCoding').factory('tasksManager', ['$http', function ($http) {
-  var URL = 'http://jsbursa.wookieelabs.com:4600/tasks?id=';
+angular.module('midnightCoding').factory('tasksManager', ['$http', 'appUrl', function ($http, appUrl) {
 
 
   function getTasks (id) {
     id = id || 'demo';
 
-    return $http.get(URL + id).then(function (response) {
+    return $http.get(appUrl + '?id=' + id).then(function (response) {
       var results = [];
       _.each(response.data, function (task, taskId) {
         task.id = taskId;

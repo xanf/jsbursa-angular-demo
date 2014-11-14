@@ -6,33 +6,25 @@
     <link href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap-theme.min.css" rel="stylesheet">
 
+    <link href="css/index.css" rel="stylesheet">
+
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
 
     <script src="app.js"></script>
-    <script src="js/controllers/MainCtrl.js"></script>
-    <script src="js/directives/task/task.js"></script>
-    <script src="js/services/tasksManager.js"></script>
-</head>
-<body ng-controller="MainCtrl">
-<div class="col-xs-12">
-    <h1>TODO-лист <span class="name">gb64d</span></h1>
-</div>
-<div class="col-xs-{{(12 / (columns.length + 1))}}" ng-repeat="column in columns" >
-    <h2>{{column.title}}</h2>
-    <div ng-repeat="task in tasks | filter: {status: column.status}"
-         task="task"
-         on-update="taskUpdate"
-         on-remove="taskRemove"
-         action-text="{{column.action}}"
-         action-class="{{column.actionClass}}"
-    >
-    </div>
-</div>
+    <script src="js/controllers/BoardCtrl.js"></script>
+    <script src="js/controllers/HomeCtrl.js"></script>
 
-<div class="col-xs-{{(12 / (columns.length + 1))}}">
-    <h2>Новая задача</h2>
-</div>
+    <script src="js/directives/task/task.js"></script>
+
+    <script src="js/services/tasksManager.js"></script>
+    <script src="js/services/transportService.js"></script>
+    <script src="js/services/syncService.js"></script>
+
+</head>
+<body>
+<div ng-view></div>
 
 </body>
 </html>
